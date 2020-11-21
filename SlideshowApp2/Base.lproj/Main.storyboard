@@ -69,7 +69,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="xnm-pD-whe">
                     <connections>
-                        <action selector="viewTap:" destination="BYZ-38-t0r" id="OPF-KM-03B"/>
+                        <action selector="tozoomViewer:" destination="BYZ-38-t0r" id="SdK-i1-Ro4"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

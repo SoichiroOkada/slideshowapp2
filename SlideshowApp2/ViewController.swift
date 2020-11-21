@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var imageView: UIImageView!
 
+
     @IBAction func modoru(_ sender: Any) {
         // 表示している画像の番号を1減らす
         displayImageNumber -= 1
@@ -64,11 +65,14 @@ class ViewController: UIViewController {
         
         self.performSegue(withIdentifier: "tozoomView", sender: nil)
         
-        @IBAction func unwind(_ segue: UIStoryboardSegue)
-
         // Do any additional setup after loading the view.
+ 
+}
+    
+         @IBAction func unwind(_ segue: UIStoryboardSegue){
+         }
+
+
     }
 
-
-}
 
