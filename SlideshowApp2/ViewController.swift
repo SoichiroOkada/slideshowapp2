@@ -47,8 +47,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var buttun1: NSLayoutConstraint!
     @IBAction func saisei(_ sender: Any) {
-        Timer.SchedulerTimer(timeInterval: 2.0,target: self, selector:#selector(updateTimer(_:)),userInfo: nil, repeats: true)
-    }
+            }
     
     @IBAction func modoru(_ sender: Any) {
         // 表示している画像の番号を1減らす
