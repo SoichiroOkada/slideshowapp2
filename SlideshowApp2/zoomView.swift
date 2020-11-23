@@ -21,8 +21,7 @@ class zoomView: UIViewController {
         
 
         // Do any additional setup after loading the view.
-        
-        func displayImage() {
+  
         // 画像の名前の配列
             let imageNameArray = [
                 "0",
@@ -37,7 +36,6 @@ class zoomView: UIViewController {
 
 
             zoomimage.image = image
-        }
     }
     
 
