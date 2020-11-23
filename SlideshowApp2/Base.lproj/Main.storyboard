@@ -46,10 +46,17 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="FtA-Oj-uQ3"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="xnm-pD-whe" appends="YES" id="Tu0-so-NUD"/>
-                                </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2p-9S-Phd">
+                                <rect key="frame" x="87" y="373" width="240" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fcO-n7-lMx" kind="show" id="P0g-km-EA2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -68,17 +75,11 @@
                     <connections>
                         <outlet property="buttun1" destination="Vyf-tp-dxb" id="spr-ZF-gcN"/>
                         <outlet property="imageView" destination="41U-Wh-R7r" id="NNm-S3-WaM"/>
-                        <segue destination="fcO-n7-lMx" kind="show" identifier="tozoomView" id="eOQ-m7-WsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xnm-pD-whe">
-                    <connections>
-                        <action selector="tapgesture:" destination="BYZ-38-t0r" id="v9k-fm-Qa9"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="139" y="113"/>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
         <!--Zoom View-->
         <scene sceneID="7Ds-8A-YX4">
@@ -90,29 +91,37 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkP-CM-I9U">
                                 <rect key="frame" x="192" y="659" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Nhw-K8-Fp8"/>
+                                    <constraint firstAttribute="width" constant="31" id="OFX-hS-xUC"/>
+                                </constraints>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <segue destination="Ede-pT-OSz" kind="unwind" unwindAction="unwind:" id="kaS-z0-po4"/>
+                                    <segue destination="Ede-pT-OSz" kind="unwind" unwindAction="unwind:" id="iB4-qf-eXa"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NLU-OA-jla">
-                                <rect key="frame" x="0.0" y="259" width="414" height="247"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="zoomViewView" translatesAutoresizingMaskIntoConstraints="NO" id="NLU-OA-jla">
+                                <rect key="frame" x="7" y="250" width="400" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="1GY-S5-Sk5"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="PkP-CM-I9U" firstAttribute="top" secondItem="NLU-OA-jla" secondAttribute="bottom" constant="153" id="07V-Cs-puC"/>
-                            <constraint firstItem="NLU-OA-jla" firstAttribute="trailing" secondItem="Vbd-Yf-t6o" secondAttribute="trailing" id="BEk-hc-3Ku"/>
-                            <constraint firstItem="NLU-OA-jla" firstAttribute="leading" secondItem="Vbd-Yf-t6o" secondAttribute="leading" id="To9-Rn-zxk"/>
-                            <constraint firstItem="NLU-OA-jla" firstAttribute="centerX" secondItem="d2k-aD-jhJ" secondAttribute="centerX" id="cKt-TQ-URF"/>
+                            <constraint firstItem="Vbd-Yf-t6o" firstAttribute="trailing" secondItem="NLU-OA-jla" secondAttribute="trailing" constant="7" id="0m5-i8-RkN"/>
+                            <constraint firstItem="NLU-OA-jla" firstAttribute="top" secondItem="Vbd-Yf-t6o" secondAttribute="top" constant="250" id="5jj-vm-ObW"/>
+                            <constraint firstItem="NLU-OA-jla" firstAttribute="leading" secondItem="Vbd-Yf-t6o" secondAttribute="leading" constant="7" id="E4U-Zi-OFL"/>
                             <constraint firstItem="Vbd-Yf-t6o" firstAttribute="trailing" secondItem="PkP-CM-I9U" secondAttribute="trailing" constant="191" id="fPI-IY-4rF"/>
                             <constraint firstItem="PkP-CM-I9U" firstAttribute="leading" secondItem="Vbd-Yf-t6o" secondAttribute="leading" constant="192" id="gk4-8J-adj"/>
-                            <constraint firstItem="NLU-OA-jla" firstAttribute="top" secondItem="Vbd-Yf-t6o" secondAttribute="top" constant="259" id="hrF-hQ-1mm"/>
                             <constraint firstItem="Vbd-Yf-t6o" firstAttribute="bottom" secondItem="PkP-CM-I9U" secondAttribute="bottom" constant="119" id="oY4-Ag-9d9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vbd-Yf-t6o"/>
                     </view>
                     <navigationItem key="navigationItem" id="EAC-Cl-vJa"/>
+                    <connections>
+                        <outlet property="zoomimage" destination="NLU-OA-jla" id="bfg-kI-ZoE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQa-rt-WKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Ede-pT-OSz" userLabel="Exit" sceneMemberID="exit"/>

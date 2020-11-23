@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBAction func tozoomview2(_ sender: Any) {
 
+        self.performSegue(withIdentifier: "toZoomView", sender: nil)
+
+    }
     
     var timer_sec: Float = 0
     @objc func updateTimer(_ timer: Timer){
@@ -105,6 +109,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
  
 }
+    override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+
+    let ZoomViewController:zoomView = segue.destination as! zoomView
+     
+        ZoomViewController.x = displayImageNumber
+    }
+  
+    
     
          @IBAction func unwind(_ segue: UIStoryboardSegue){
          }
