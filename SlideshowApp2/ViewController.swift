@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     var timer_sec: Int = 0
     
-    
+
     @IBAction func viewTap(_ sender: Any) { 
     }
     @IBOutlet weak var imageView: UIImageView!
@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttun1: NSLayoutConstraint!
     @IBAction func saisei(_ sender: Any) {
     createTimer()
+        
     }
-    
     @IBAction func modoru(_ sender: Any) {
         // 表示している画像の番号を1減らす
         displayImageNumber -= 1
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 2.0,
                                      target: self,
             selector:#selector(updateTimer(_:)),
-            useInfo:nil,
+            userInfo:nil,
             repeats:true)
     }
     @objc func updateTimer(_ timer: Timer){
