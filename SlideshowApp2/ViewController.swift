@@ -17,15 +17,20 @@ class ViewController: UIViewController {
     
     var timer_sec: Int = 0
     
-
-    @IBAction func viewTap(_ sender: Any) { 
+    
+    
+    @IBOutlet weak var modorubotan: UIButton!
+    @IBOutlet weak var susumubotan: UIButton!
+    @IBOutlet weak var saiseiteisibotan: UIButton!
+    @IBAction func viewTap(_ sender: Any) {
     }
     @IBOutlet weak var imageView: UIImageView!
 
     @IBOutlet weak var buttun1: NSLayoutConstraint!
     @IBAction func saisei(_ sender: Any) {
     createTimer()
-        
+    play()
+
     }
     @IBAction func modoru(_ sender: Any) {
         // 表示している画像の番号を1減らす
@@ -42,6 +47,24 @@ class ViewController: UIViewController {
          displayImage()}
     
     var displayImageNumber = 0
+
+    
+    func play() {
+        susumubotan.isEnabled = false
+        modorubotan.isEnabled = false
+        saiseiteisibotan.setTitle("停止",for: .normal)
+        saiseiteisibotan.addTarget(self, action: , for: .touchUpInside)
+    }
+    
+        func stop() {
+        susumubotan.isEnabled = true
+        modorubotan.isEnabled = true
+        if self.timer != nil{
+            self.timer.invalidate()
+            self.timer = nil
+        }
+        
+    }
     
     func displayImage() {
     // 画像の名前の配列
@@ -90,7 +113,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         imageView.image = UIImage(named:"0")
         
 
