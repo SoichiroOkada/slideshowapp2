@@ -115,13 +115,13 @@ class ViewController: UIViewController {
         
     }
     
-    func createTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 2.0,
-                                     target: self,
-                                     selector:#selector(updateTimer(_:)),
-                                     userInfo:nil,
-                                     repeats:true)
-    }
+//    func createTimer(){
+//        timer = Timer.scheduledTimer(timeInterval: 2.0,
+//                                     target: self,
+//                                     selector:#selector(updateTimer(_:)),
+//                                     userInfo:nil,
+//                                     repeats:true)
+//    }
     @objc func updateTimer(_ timer: Timer){
         displayImageNumber += 1
         displayImage()}
