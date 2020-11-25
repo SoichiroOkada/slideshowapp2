@@ -89,14 +89,15 @@ class ViewController: UIViewController {
             "0",
             "1",
             "2",
+            "3"
         ]
         // 範囲より下を指している場合、最後の画像を表示
         if displayImageNumber < 0 {
-            displayImageNumber = 2
+            displayImageNumber = 3
         }
         
         // 範囲より上を指している場合、最初の画像を表示
-        if displayImageNumber > 2 {
+        if displayImageNumber > 3 {
             displayImageNumber = 0
         }
         
@@ -110,11 +111,14 @@ class ViewController: UIViewController {
         imageView.image = image
     }
     
-    @IBAction func tapgesture(_ sender: Any) {
-        self.performSegue(withIdentifier: "tozoomView", sender: nil)
-        
-    }
-    
+//    @IBAction func tapgesture(_ sender: Any) {
+//        if self.timer != nil{
+//            self.timer.invalidate()}
+//
+//        self.performSegue(withIdentifier: "tozoomView", sender: nil)
+//
+//    }
+//
 //    func createTimer(){
 //        timer = Timer.scheduledTimer(timeInterval: 2.0,
 //                                     target: self,
@@ -138,6 +142,14 @@ class ViewController: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender:Any?){
+        if self.timer != nil{
+            self.timer.invalidate()
+            self.timer = nil
+            susumubotan.isEnabled = true
+            modorubotan.isEnabled = true
+            saiseiteisibotan.setTitle("再生",for: .normal)
+            
+        }
         
         let ZoomViewController:zoomView = segue.destination as! zoomView
         
